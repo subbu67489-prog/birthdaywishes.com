@@ -1,288 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Vissu Maa!</title>
-  
-  <!-- Google Fonts: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
-      overflow-y: auto;
-      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 10px;
-    }
-
-    h1 {
-      font-size: 5em;
-      color: #fff;
-      text-shadow: 0 0 20px #ff4e50, 0 0 40px #ff4e50;
-      animation: glow 1.5s infinite alternate;
-      text-align: center;
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #ff4e50;
-      }
-      to {
-        text-shadow: 0 0 30px #f9d423, 0 0 60px #f9d423;
-      }
-    }
-
-    h2 {
-      margin-top: 20px;
-      color: #fff;
-      font-size: 2em;
-      text-align: center;
-    }
-
-    input {
-      padding: 10px;
-      font-size: 1.1em;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      margin: 5px;
-    }
-
-    button {
-      padding: 12px 25px;
-      font-size: 1.2em;
-      background: #ff4e50;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 5px;
-    }
-
-    button:hover {
-      background: #f9d423;
-      color: #000000;
-    }
-
-    .confetti {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: #fff;
-      animation: fall 5s infinite, confettiFade 1s forwards;
-      opacity: 0;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-10px) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) rotate(720deg);
-        opacity: 0;
-      }
-    }
-
-    @keyframes confettiFade {
-      to {
-        opacity: 1;
-      }
-    }
-
-    .cake {
-      display: none;
-      margin-top: 40px;
-      animation: fadeIn 2s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .cake svg {
-      width: 200px;
-      animation: bounce 2s infinite alternate;
-    }
-
-    @keyframes bounce {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-10px);
-      }
-    }
-
-    .message {
-      display: none;
-      margin-top: 25px;
-      color: #fff;
-      font-size: 1.2em;
-      text-align: center;
-      line-height: 1.6em;
-      white-space: pre-line;
-      padding: 0 20px;
-    }
-
-    marquee {
-      width: 100%;
-      background: #ff4e50;
-      color: #fff;
-      padding: 4px 0;
-      font-size: 1em;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-
-    /* Mobile responsive styles */
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 3em;
-      }
-      h2 {
-        font-size: 1.5em;
-      }
-      .message {
-        font-size: 1em;
-      }
-      .cake svg {
-        width: 150px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Vissu Maa!</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
+    font-family:'Poppins', sans-serif;
+    overflow:hidden;
+  }
+  h1 {
+    font-size:5em;
+    color:#fff;
+    text-shadow:0 0 20px #ff4e50,0 0 40px #ff4e50;
+    animation: glow 1.5s infinite alternate;
+    text-align:center;
+  }
+  @keyframes glow { from { text-shadow:0 0 10px #fff,0 0 20px #ff4e50;} to { text-shadow:0 0 30px #f9d423,0 0 60px #f9d423; } }
+  h2 { margin-top:20px; color:#fff; font-size:2em; text-align:center; }
+  input { padding:10px; font-size:1.1em; border-radius:8px; border:none; outline:none; margin:5px; }
+  button { padding:12px 25px; font-size:1.2em; background:#ff4e50; border:none; border-radius:8px; color:white; cursor:pointer; transition:0.3s; margin-top:5px; }
+  button:hover { background:#f9d423; color:#000000; }
+  .confetti { position:absolute; width:10px; height:10px; background-color:#fff; animation:fall 5s infinite; }
+  @keyframes fall { 0% { transform:translateY(-10px) rotate(0deg); opacity:1; } 100% { transform:translateY(100vh) rotate(720deg); opacity:0;} }
+  .cake { display:none; margin-top:40px; animation:fadeIn 2s ease forwards; }
+  @keyframes fadeIn { from {opacity:0; transform:scale(0.5);} to {opacity:1; transform:scale(1);} }
+  .cake svg { width:200px; animation:bounce 2s infinite alternate; }
+  @keyframes bounce { 0%{ transform:translateY(0); } 100%{ transform:translateY(-10px); } }
+  .message {
+    display:none;
+    margin-top:25px;
+    color:#fff;
+    font-size:1.2em;
+    text-align:center;
+    line-height:1.6em;
+    white-space: pre-line;
+  }
+  /* Smaller scroller */
+  marquee {
+    width:100%;
+    background:#ff4e50;
+    color:#fff;
+    padding:4px 0;
+    font-size:1em;
+    position:fixed;
+    bottom:0;
+    left:0;
+    font-weight:500;
+    letter-spacing:0.5px;
+  }
+</style>
 </head>
-
 <body>
 
-  <h1>ߎ Happy Birthday ߎ</h1>
-  <h2 id="nameDisplay">Enter your name below ߑ</h2>
+<h1>🎉 Happy Birthday  🎂</h1>
+<h2 id="nameDisplay">Enter your name below 👇</h2>
 
-  <div>
-    <input type="text" id="nameInput" placeholder="Enter your name" aria-label="Your name">
-    <br>
-    <button onclick="showWish()">Show Wish</button>
-    <button onclick="toggleMusic()">Pause/Play Music</button>
-  </div>
+<div>
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <br>
+  <button onclick="showWish()">Show Wish</button>
+</div>
 
-  <div class="cake" id="cake">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Birthday cake">
-      <title>Birthday Cake</title>
-      <desc>Animated pink birthday cake with a candle</desc>
-      <rect x="10" y="38" width="44" height="16" fill="#ffb6b9" stroke="#d46a6a" stroke-width="2" />
-      <path d="M10 38 Q20 30 32 38 Q44 30 54 38" fill="#fddde6" stroke="#f39" stroke-width="2" />
-      <rect x="30" y="22" width="4" height="10" fill="#ff4e50" />
-      <path d="M32 18 C30 14, 34 14, 32 18 Z" fill="orange">
-        <animate attributeName="opacity" values="1;0.4;1" dur="0.7s" repeatCount="indefinite" />
-      </path>
-    </svg>
-  </div>
+<div class="cake" id="cake">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <rect x="10" y="38" width="44" height="16" fill="#ffb6b9" stroke="#d46a6a" stroke-width="2"/>
+    <path d="M10 38 Q20 30 32 38 Q44 30 54 38" fill="#fddde6" stroke="#f39" stroke-width="2"/>
+    <rect x="30" y="22" width="4" height="10" fill="#ff4e50"/>
+    <path d="M32 18 C30 14, 34 14, 32 18 Z" fill="orange">
+      <animate attributeName="opacity" values="1;0.4;1" dur="0.7s" repeatCount="indefinite"/>
+    </path>
+  </svg>
+</div>
 
-  <div class="message" id="message">
-ߎ To my dearest best friend Vissu maa ߒ  
+<div class="message" id="message">
+🎈 To my dearest best friend Vissu maa 💖  
 1️⃣ You make every moment brighter ✨  
-2️⃣ Your smile spreads pure happiness ߘ  
-3️⃣ You are strong, kind, and full of heart ߒ  
-4️⃣ I’m lucky to have you in my life ߒ  
-5️⃣ Every laugh we share is a treasure ߌ  
-6️⃣ You inspire everyone around you ߌ  
-7️⃣ Today is all about *you* and your joy ߎ  
-8️⃣ Keep shining like the star you are ߌ  
-9️⃣ May your dreams always come true ߒ  
-ߔ Love you loads, my best friend foreverߒ
-  </div>
+2️⃣ Your smile spreads pure happiness 😊  
+3️⃣ You are strong, kind, and full of heart 💫  
+4️⃣ I’m lucky to have you in my life 💕  
+5️⃣ Every laugh we share is a treasure 🌸  
+6️⃣ You inspire everyone around you 🌟  
+7️⃣ Today is all about *you* and your joy 🎁  
+8️⃣ Keep shining like the star you are 🌙  
+9️⃣ May your dreams always come true 💭  
+🔟 Love you loads, my best friend forever💝
+ 
+</div>
 
-  <audio id="bdaySong" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"></audio>
+<!-- Birthday Song + Small Scroller -->
+<audio id="bdaySong" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+<marquee behavior="scroll" direction="left">Happy Birthday Angel 🧚Happy Birthday cutee 💕 Happy Birthday Maharani 👸🏻 Happy Birthay Rakshasi 👻 </marquee>
 
-  <marquee behavior="scroll" direction="left">
-    Happy Birthday Angel ߧ Happy Birthday cutee ߒ Happy Birthday Maharani ߑߏ Happy Birthay Rakshasi ߑ
-  </marquee>
+<script>
+function showWish(){
+  const name = document.getElementById('nameInput').value.trim();
+  if(!name){ alert("Please enter your name!"); return; }
 
-  <!-- Optional WhatsApp share (Uncomment and replace URL if hosted) -->
-  <!--
-  <a href="https://wa.me/?text=Check%20out%20this%20cute%20birthday%20page!%20https://your-hosted-url.com" target="_blank">
-    Share on WhatsApp
-  </a>
-  -->
+  document.getElementById('nameDisplay').innerHTML = "🎈 Wishing you a wonderful birthday, <b>" + name + "</b>! 🎁";
+  document.querySelector('.cake').style.display = 'block';
+  document.getElementById('message').style.display = 'block';
+  createConfetti();
+  playMusic();
+}
 
-  <script>
-    function showWish() {
-      const name = document.getElementById('nameInput').value.trim();
-      if (!name) {
-        alert("Please enter your name!");
-        return;
-      }
+function createConfetti(){
+  for(let i=0;i<80;i++){
+    const c = document.createElement('div');
+    c.classList.add('confetti');
+    c.style.backgroundColor = randomColor();
+    c.style.left = Math.random()*100+'vw';
+    c.style.animationDuration = (Math.random()*3+2)+'s';
+    c.style.width = c.style.height = (Math.random()*8+4)+'px';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),5000);
+  }
+}
 
-      document.getElementById('nameDisplay').innerHTML = "ߎ Wishing you a wonderful birthday, <b>" + name + "</b>! ߎ";
-      document.querySelector('.cake').style.display = 'block';
-      document.getElementById('message').style.display = 'block';
-      createConfetti();
-      playMusic();
-    }
+function randomColor(){ 
+  const colors=['#ff4e50','#f9d423','#4ef0ff','#9d50bb','#50ff85']; 
+  return colors[Math.floor(Math.random()*colors.length)]; 
+}
 
-    function createConfetti() {
-      const existingConfetti = document.querySelectorAll('.confetti');
-      if (existingConfetti.length > 200) return; // Prevent overload
-
-      for (let i = 0; i < 80; i++) {
-        const c = document.createElement('div');
-        c.classList.add('confetti');
-        c.style.backgroundColor = randomColor();
-        c.style.left = Math.random() * 100 + 'vw';
-        c.style.animationDuration = (Math.random() * 3 + 2) + 's';
-        c.style.width = c.style.height = (Math.random() * 8 + 4) + 'px';
-        document.body.appendChild(c);
-        setTimeout(() => c.remove(), 5000);
-      }
-    }
-
-    function randomColor() {
-      const colors = ['#ff4e50', '#f9d423', '#4ef0ff', '#9d50bb', '#50ff85'];
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    function playMusic() {
-      const audio = document.getElementById('bdaySong');
-      audio.play().catch(() => {
-        document.body.addEventListener('click', () => audio.play(), { once: true });
-      });
-    }
-
-    function toggleMusic() {
-      const audio = document.getElementById('bdaySong');
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-    }
-  </script>
+function playMusic(){
+  const audio = document.getElementById('bdaySong');
+  audio.play().catch(()=>{
+    document.body.addEventListener('click',()=>audio.play(),{once:true});
+  });
+}
+</script>
 
 </body>
 </html>
-
